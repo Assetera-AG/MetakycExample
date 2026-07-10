@@ -103,6 +103,7 @@ function App() {
   const [applicantType, setApplicantType] = useState<'individual' | 'company'>(saved.applicantType);
   const [locale, setLocale] = useState(saved.locale);
   const [email, setEmail] = useState(saved.email || '');
+  const [engineOverride, setEngineOverride] = useState<string>((saved as any).engineOverride || '');
 
   const [sumsubCustomization, setSumsubCustomization] = useState(saved.sumsubCustomization);
   const [sumsubTheme, setSumsubTheme] = useState<'light' | 'dark'>(saved.sumsubTheme);
@@ -157,6 +158,7 @@ function App() {
       baseUrl: baseUrl || 'http://localhost:44302',
       endpoints: { pattern: endpointPattern },
       locale,
+      ...(engineOverride ? { engine: engineOverride as 'metakyc' | 'asseteragmbh-ui' } : {}),
       showVersion,
       debug: debugMode,
       ...(configVersion.trim() ? { configVersion: configVersion.trim() } : {}),
@@ -197,7 +199,7 @@ function App() {
     }
 
     return cfg;
-  }, [apiKey, tenantId, clientId, authMode, baseUrl, endpointPattern, locale, workflowKey, externalRefId, applicantType,
+  }, [apiKey, tenantId, clientId, authMode, baseUrl, endpointPattern, locale, engineOverride, workflowKey, externalRefId, applicantType,
       sumsubCustomization, sumsubTheme, sardineClientId, sardineEnv,
       initialValues, hiddenValues, fieldLabelMode, showVersion, sessionToken, configVersion, email, debugMode,
       encryptionKey, encSessionId]);
@@ -392,6 +394,14 @@ function App() {
               <div className="demo-field">
                 <label>Locale</label>
                 <input value={locale} onChange={e => setLocale(e.target.value)} placeholder="en" />
+              </div>
+              <div className="demo-field">
+                <label>Component engine</label>
+                <select value={engineOverride} onChange={e => setEngineOverride(e.target.value)}>
+                  <option value="">(backend / default)</option>
+                  <option value="metakyc">metakyc (built-in)</option>
+                  <option value="asseteragmbh-ui">asseteragmbh-ui (Assetera UI kit)</option>
+                </select>
               </div>
             </div>
             <div className="demo-field-row">

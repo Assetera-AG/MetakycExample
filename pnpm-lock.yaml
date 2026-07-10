@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@asseteragmbh/metakyc':
-        specifier: ^1.0.159
-        version: 1.0.159(react-dom@18.3.1(react@18.3.1))(react-hook-form@7.71.2(react@18.3.1))(react@18.3.1)(zod@3.25.76)
+        specifier: ^1.1.1
+        version: 1.1.1(react-dom@18.3.1(react@18.3.1))(react-hook-form@7.71.2(react@18.3.1))(react@18.3.1)(zod@3.25.76)
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -42,8 +42,8 @@ importers:
 
 packages:
 
-  '@asseteragmbh/metakyc@1.0.159':
-    resolution: {integrity: sha512-RFrASOE6eY3KwuSjxm83kgxfuOITX2djIz8CdeBKlOUpec615Pr30lxrFnitRNdPiCypmkIxsKtzl5Xqw7ehmg==}
+  '@asseteragmbh/metakyc@1.1.1':
+    resolution: {integrity: sha512-9iYF4OuOvti4VxGNpZXU6ocJQwbWRy5nvW1D3i5iOBIrCClHDo/LD0wl/HaIa+XOdauz08j8K0Z+PjMPqDWEww==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
@@ -494,7 +494,7 @@ packages:
 
 snapshots:
 
-  '@asseteragmbh/metakyc@1.0.159(react-dom@18.3.1(react@18.3.1))(react-hook-form@7.71.2(react@18.3.1))(react@18.3.1)(zod@3.25.76)':
+  '@asseteragmbh/metakyc@1.1.1(react-dom@18.3.1(react@18.3.1))(react-hook-form@7.71.2(react@18.3.1))(react@18.3.1)(zod@3.25.76)':
     dependencies:
       '@hookform/resolvers': 5.2.2(react-hook-form@7.71.2(react@18.3.1))
       axios: 1.13.6
